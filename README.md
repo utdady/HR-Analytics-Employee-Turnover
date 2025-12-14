@@ -1,4 +1,4 @@
-# HR Analytics — Employee Turnover Prediction (Salifort Motors)
+  # HR Analytics — Employee Turnover Prediction (Salifort Motors)
 ## Overview
 
 This project analyzes HR data from Salifort Motors to understand the key drivers of employee turnover and build predictive models that estimate the likelihood an employee will leave.
@@ -33,15 +33,19 @@ The dataset contains 14,999 rows and 10 features, including:
 
 Employees who leave have significantly lower satisfaction, clustering between 0.1–0.4, while retained employees are typically above 0.6.
 
-![Satisfaction Distribution](images/satisfaction_level_distribution.png)
+![Satisfaction vs Departure](images/histogram_satisfaction_level_distribution_by_employee_status.png)
 
 ### Tenure vs Employee Departure
 
 Turnover peaks at 2–4 years, indicating a critical window where intervention may prevent churn.
 
+![Tenure vs Departure](images/histogram_tenure_vs_employee_departure.png)
+
 ### Department vs Employee Departure
 
 Sales, Technical, and Support show the highest total turnover. Management employees have the lowest turnover rate.
+
+![Department vs Departure](images/histogram_department_vs_employee_departure.png)
 
 ### Workload Effects — Average Monthly Hours
 
@@ -50,12 +54,16 @@ Employees who leave fall into two risk groups:
 - Underworked (low monthly hours → disengaged)
 - Overworked (240+ hours → burnout)
 
+![Average Monthly Hours](images/histogram_average_monthlyhours_by_employee_status.png)
+
 ### Number of Projects vs Employee Departure
 
 Extremes contribute to risk:
 
 - Too few projects → boredom
 - Too many projects → overload
+
+![Projects vs Departure](images/histogram_no_of_projects_vs_employee_departure.png)
 
 ### Modeling & Performance Evaluation
 
@@ -68,9 +76,13 @@ We trained four models:
 | Random Forest | 0.98 | 0.99 | 0.91 | 0.95 | 0.98 |
 | XGBoost | 0.98 | 0.97 | 0.91 | 0.94 | 0.99 |
 
+![Confusion Matrix Comparison](images/confusion_matrix_comparison.png)
+
 📈 ROC Curve Comparison
 
 Random Forest and XGBoost deliver the strongest predictive power.
+
+![ROC Curve Comparison](images/roc_curve_comparison.png)
 
 ## Key Predictors (Feature Importance)
 
@@ -82,6 +94,11 @@ Across tree-based models, the most influential features were:
 - Tenure
 - Last Evaluation Score
 Salary, promotions, and department have weaker predictive power but still contribute.
+
+![XGB FI](images/histogram_feature_importance_fscore.png)
+![FI Comparison](images/histogram_feature_importance_comparison.png)
+![Decision Tree](images/decision_tree.png)
+![Heatmap](images/heatmap_feature_correlation.png)
 
 ## Actionable Recommendations for HR
 ### Improve employee satisfaction
